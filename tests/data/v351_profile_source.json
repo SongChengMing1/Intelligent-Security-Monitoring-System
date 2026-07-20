@@ -1,0 +1,19 @@
+{
+  "profile_schema_version": 1,
+  "profile_id": "indoor-person",
+  "description": "Description is intentionally excluded from the effective hash",
+  "detector": {
+    "high_threshold": 0.5,
+    "nms_threshold": 0.6
+  },
+  "observation": {
+    "allowed_class_ids": [0],
+    "min_width": 24,
+    "min_height": 48,
+    "min_area": 1600
+  },
+  "tracker": {
+    "low_threshold": 0.35,
+    "new_track_threshold": 0.5
+  }
+}

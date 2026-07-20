@@ -1,0 +1,12 @@
+{
+  "manifest_schema_version": 1,
+  "record_schema_version": 1,
+  "recording_session_id": "fixture-session",
+  "runtime_session_id": "fixture-runtime",
+  "effective_profile_id": "indoor-person",
+  "effective_profile_hash": "sha256:fixture",
+  "source_width": 640,
+  "source_height": 480,
+  "preprocess_mode": "letterbox",
+  "frame_mode": "none"
+}

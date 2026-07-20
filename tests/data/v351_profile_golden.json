@@ -1,0 +1,4 @@
+{
+  "canonical_json": "{\"detector\":{\"high_threshold\":0.5,\"nms_threshold\":0.6},\"observation\":{\"allowed_class_ids\":[0],\"edge_margin\":0.0,\"max_observations\":256,\"min_area\":1600.0,\"min_height\":48.0,\"min_width\":24.0,\"roi\":{\"enabled\":false,\"x1\":0.0,\"x2\":1.0,\"y1\":0.0,\"y2\":1.0}},\"profile_id\":\"indoor-person\",\"profile_schema_version\":1,\"tracker\":{\"confirm_hits\":2,\"high_threshold\":0.5,\"lost_timeout_ms\":1000,\"low_threshold\":0.35,\"match_threshold\":0.8,\"max_tracks\":64,\"new_track_threshold\":0.5,\"second_match_threshold\":0.5,\"type\":\"bytetrack\"}}",
+  "profile_hash": "sha256:0fea6d754975cdfa3ef4992c3297b3ab1608badbe81763bb0341a9c49e7e40c3"
+}

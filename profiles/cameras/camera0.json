@@ -1,0 +1,11 @@
+{
+  "camera_id": "camera0",
+  "description": "RK3568 primary camera",
+  "roi": {
+    "enabled": false,
+    "x1": 0.0,
+    "y1": 0.0,
+    "x2": 1.0,
+    "y2": 1.0
+  }
+}

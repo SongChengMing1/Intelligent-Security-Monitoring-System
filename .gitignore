@@ -1,0 +1,108 @@
+# Build and generated install outputs
+build/
+install/
+third_party/sysroots/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+install_manifest.txt
+Makefile
+
+# Local datasets
+dataset/
+datasets/
+
+# Model and conversion artifacts
+model/
+*.rknn
+*.onnx
+*.pt
+*.pth
+*.weights
+*.engine
+*.tflite
+convert_rknn_demo/**/onnx_models/
+convert_rknn_demo/**/rknn_models/
+
+# Public model path retained by the release tree
+!model/
+!model/bus.jpg
+!model/coco_80_labels_list.txt
+!model/RK356X/
+!model/RK356X/yolov6n-640-640.rknn
+
+# Runtime output images and logs
+out.jpg
+resize_input.jpg
+*.log
+recordings/
+*.jpg
+
+# Generated binaries, compiler outputs, and captured media
+*.o
+*.obj
+*.a
+*.so
+*.so.*
+*.d
+*.bin
+*.elf
+*.map
+*.dump
+*.mp4
+*.avi
+*.mkv
+*.mov
+*.webm
+*.h264
+*.264
+*.yuv
+*.raw
+
+# Local credentials and certificates
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+credentials*.json
+secrets*.json
+
+# Python cache and virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+.venv-rknn13/
+venv/
+
+# Editor and OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Local development notes, validation logs, and board reference docs
+docs/develop/
+docs/logs/
+docs/ref/
+docs/*
+!docs/.gitkeep
+
+# Local workflow and environment notes
+AGENTS.md
+CONTEXT.md
+build-linux_RK3588.sh
+.claude/
+.codex/
+.scratch/
+
+.agents/
+.claude/
+.codex/
+.scratch/

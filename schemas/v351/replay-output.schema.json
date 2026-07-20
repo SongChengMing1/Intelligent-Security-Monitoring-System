@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "rknn-detect/v351/replay-output.schema.json",
+  "type": "object",
+  "required": ["replay_manifest_schema_version", "mode", "source_session_id", "policy_source", "detector_comparability", "effective_profile_hash"],
+  "properties": {
+    "replay_manifest_schema_version": {"const": 1},
+    "mode": {"enum": ["recorded", "tracker-rerun", "policy-tracker-rerun"]},
+    "source_session_id": {"type": "string", "minLength": 1},
+    "policy_source": {"enum": ["recorded", "rerun"]},
+    "detector_comparability": {"enum": ["exact", "fixed_detector_mismatch"]},
+    "effective_profile_hash": {"type": "string"},
+    "warnings": {"type": "array", "items": {"type": "string"}}
+  }
+}

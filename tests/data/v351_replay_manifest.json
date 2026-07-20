@@ -1,0 +1,9 @@
+{
+  "replay_manifest_schema_version": 1,
+  "source_record_schema_version": 1,
+  "mode": "tracker-rerun",
+  "policy_source": "recorded",
+  "detector_comparability": "exact",
+  "source_session_id": "fixture-session",
+  "effective_profile_hash": "sha256:fixture"
+}

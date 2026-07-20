@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "rknn-detect/v351/tracking-profile.schema.json",
+  "title": "V3.5.1 Resolved Tracking Profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["profile_schema_version", "profile_id", "detector", "observation", "tracker"],
+  "properties": {
+    "profile_schema_version": {"const": 1},
+    "profile_id": {"type": "string", "minLength": 1},
+    "detector": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["high_threshold", "nms_threshold"],
+      "properties": {
+        "high_threshold": {"type": "number", "minimum": 0, "maximum": 1},
+        "nms_threshold": {"type": "number", "exclusiveMinimum": 0, "maximum": 1}
+      }
+    },
+    "observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["allowed_class_ids", "min_width", "min_height", "min_area", "edge_margin", "max_observations", "roi"],
+      "properties": {
+        "allowed_class_ids": {"type": "array", "uniqueItems": true, "items": {"type": "integer", "minimum": 0}},
+        "min_width": {"type": "number", "minimum": 0},
+        "min_height": {"type": "number", "minimum": 0},
+        "min_area": {"type": "number", "minimum": 0},
+        "edge_margin": {"type": "number", "minimum": 0},
+        "max_observations": {"type": "integer", "minimum": 1, "maximum": 4096},
+        "roi": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["enabled", "x1", "y1", "x2", "y2"],
+          "properties": {
+            "enabled": {"type": "boolean"},
+            "x1": {"type": "number", "minimum": 0, "maximum": 1},
+            "y1": {"type": "number", "minimum": 0, "maximum": 1},
+            "x2": {"type": "number", "minimum": 0, "maximum": 1},
+            "y2": {"type": "number", "minimum": 0, "maximum": 1}
+          }
+        }
+      }
+    },
+    "tracker": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "low_threshold", "high_threshold", "new_track_threshold", "match_threshold", "second_match_threshold", "confirm_hits", "lost_timeout_ms", "max_tracks"],
+      "properties": {
+        "type": {"const": "bytetrack"},
+        "low_threshold": {"type": "number", "minimum": 0, "maximum": 1},
+        "high_threshold": {"type": "number", "minimum": 0, "maximum": 1},
+        "new_track_threshold": {"type": "number", "minimum": 0, "maximum": 1},
+        "match_threshold": {"type": "number", "exclusiveMinimum": 0, "maximum": 1},
+        "second_match_threshold": {"type": "number", "exclusiveMinimum": 0, "maximum": 1},
+        "confirm_hits": {"type": "integer", "minimum": 1},
+        "lost_timeout_ms": {"type": "integer", "minimum": 1},
+        "max_tracks": {"type": "integer", "minimum": 1, "maximum": 4096}
+      }
+    }
+  }
+}

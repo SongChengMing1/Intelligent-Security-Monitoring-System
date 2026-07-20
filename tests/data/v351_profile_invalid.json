@@ -1,0 +1,12 @@
+{
+  "profile_schema_version": 1,
+  "profile_id": "invalid-duplicate-class",
+  "observation": {
+    "allowed_class_ids": [0, 0],
+    "roi": {
+      "enabled": true,
+      "x1": 0.9,
+      "x2": 0.1
+    }
+  }
+}

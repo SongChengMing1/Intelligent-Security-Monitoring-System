@@ -1,0 +1,20 @@
+{
+  "event_profile_schema_version": 1,
+  "camera_id": "camera0",
+  "enabled": true,
+  "rule": {
+    "rule_id": "person-intrusion",
+    "type": "region_intrusion",
+    "class_ids": [0],
+    "region": {
+      "type": "rectangle",
+      "x1": 0.0,
+      "y1": 0.0,
+      "x2": 0.5,
+      "y2": 1.0
+    },
+    "dwell_ms": 5000,
+    "boundary_hysteresis_px": 5,
+    "prediction_grace_ms": 1000
+  }
+}

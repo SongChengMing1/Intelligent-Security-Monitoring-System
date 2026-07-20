@@ -1,0 +1,3 @@
+# Preserve fixed upstream formatting; project-owned adapters remain whitespace-checked.
+third_party/eigen3/** -whitespace
+third_party/bytetrack/** -whitespace

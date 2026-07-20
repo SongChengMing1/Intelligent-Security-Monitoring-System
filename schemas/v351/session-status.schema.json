@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "rknn-detect/v351/session-status.schema.json",
+  "type": "object",
+  "required": ["status_schema_version", "state", "recording_session_id", "written_records", "dropped_records", "bytes_written", "segments"],
+  "properties": {
+    "status_schema_version": {"const": 1},
+    "state": {"enum": ["starting", "recording", "finalizing", "finalized", "limit_reached", "failed", "interrupted"]},
+    "recording_session_id": {"type": "string", "minLength": 1},
+    "written_records": {"type": "integer", "minimum": 0},
+    "dropped_records": {"type": "integer", "minimum": 0},
+    "bytes_written": {"type": "integer", "minimum": 0},
+    "error": {"type": "string"},
+    "segments": {"type": "array", "items": {"type": "object"}}
+  }
+}

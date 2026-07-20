@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "rknn-detect/v351/recording-manifest.schema.json",
+  "type": "object",
+  "required": ["manifest_schema_version", "record_schema_version", "recording_session_id", "runtime_session_id", "effective_profile_id", "effective_profile_hash", "resolved_profile", "source_width", "source_height", "preprocess_mode", "frame_mode"],
+  "properties": {
+    "manifest_schema_version": {"const": 1},
+    "record_schema_version": {"const": 1},
+    "recording_session_id": {"type": "string", "minLength": 1},
+    "runtime_session_id": {"type": "string", "minLength": 1},
+    "effective_profile_id": {"type": "string", "minLength": 1},
+    "effective_profile_hash": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "resolved_profile": {"type": "object"},
+    "source_width": {"type": "integer", "minimum": 1},
+    "source_height": {"type": "integer", "minimum": 1},
+    "preprocess_mode": {"enum": ["resize", "letterbox"]},
+    "frame_mode": {"enum": ["none", "sampled", "all"]}
+  }
+}

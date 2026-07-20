@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "rknn-detect/v351/analysis-record.schema.json",
+  "title": "V3.5.1 Analysis Record",
+  "type": "object",
+  "required": ["record_schema_version", "recording_session_id", "runtime_session_id", "capture_frame_id", "capture_timestamp_ms", "source_width", "source_height", "observations", "tracker_input_observation_ids", "recorded_tracks", "effective_profile_id", "effective_profile_hash", "timings", "image"],
+  "properties": {
+    "record_schema_version": {"const": 1},
+    "recording_session_id": {"type": "string", "minLength": 1},
+    "runtime_session_id": {"type": "string", "minLength": 1},
+    "capture_frame_id": {"type": "integer", "minimum": 1},
+    "capture_timestamp_ms": {"type": "integer", "minimum": 1},
+    "record_timestamp_ms": {"type": "integer", "minimum": 1},
+    "source_width": {"type": "integer", "minimum": 1},
+    "source_height": {"type": "integer", "minimum": 1},
+    "observations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["observation_id", "origin", "class_id", "class_name", "score", "bbox", "admitted", "rejection_reasons"],
+        "properties": {
+          "observation_id": {"type": "integer", "minimum": 1},
+          "origin": {"enum": ["high_pass", "low_only"]},
+          "class_id": {"type": "integer", "minimum": 0},
+          "class_name": {"type": "string"},
+          "score": {"type": "number", "minimum": 0, "maximum": 1},
+          "bbox": {"type": "array", "prefixItems": [{"type": "number"}, {"type": "number"}, {"type": "number"}, {"type": "number"}], "minItems": 4, "maxItems": 4},
+          "admitted": {"type": "boolean"},
+          "rejection_reasons": {"type": "array", "items": {"enum": ["class_not_allowed", "below_min_width", "below_min_height", "below_min_area", "outside_roi", "inside_edge_margin", "capacity_limit", "invalid_bbox", "below_tracker_low_threshold"]}}
+        }
+      }
+    },
+    "tracker_input_observation_ids": {"type": "array", "items": {"type": "integer", "minimum": 1}},
+    "recorded_tracks": {"type": "object"},
+    "effective_profile_id": {"type": "string", "minLength": 1},
+    "effective_profile_hash": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "timings": {"type": "object"},
+    "image": {
+      "type": "object",
+      "required": ["state"],
+      "properties": {
+        "state": {"enum": ["none", "exact", "unavailable", "dropped"]},
+        "relative_path": {"type": "string"},
+        "capture_frame_id": {"type": "integer", "minimum": 1}
+      }
+    }
+  }
+}

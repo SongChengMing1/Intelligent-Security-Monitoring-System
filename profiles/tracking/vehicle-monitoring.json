@@ -1,0 +1,20 @@
+{
+  "profile_schema_version": 1,
+  "profile_id": "vehicle-monitoring",
+  "description": "Vehicle monitoring baseline",
+  "detector": {
+    "high_threshold": 0.5,
+    "nms_threshold": 0.6
+  },
+  "observation": {
+    "allowed_class_ids": [1, 2, 3, 5, 7],
+    "min_width": 24,
+    "min_height": 24,
+    "min_area": 800,
+    "edge_margin": 0
+  },
+  "tracker": {
+    "low_threshold": 0.35,
+    "new_track_threshold": 0.5
+  }
+}
